@@ -84,7 +84,7 @@ def get_status():
 def login(username, password):
     '''
     Login with username and password(encrypted).
-    
+
     This function does not need the raw password.
     '''
     return urlopen(URL_LOGIN, urlencode({
@@ -110,7 +110,7 @@ def logout():
 def show_status():
     print('Current status:')
     status = get_status()
-    if len(status)==1 and status[0]==b'':
+    if len(status)==1 and status[0]=='':
         print('  (offline)')
     else:
         def require_int(func):
